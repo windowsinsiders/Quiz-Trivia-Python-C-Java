@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from questions
+from questions import *
 
 class Project:
     def __init__(self):
@@ -28,8 +28,8 @@ class Project:
 
     def set_(self):
         if self.que==None:
-            messageboxshowinfo("Error","Please select course first...")
-            
+            messagebox.showinfo("Error","Please select course first...")
+            return 
         self.count+=1
 
         if self.count==len(self.que):
@@ -48,7 +48,7 @@ class Project:
             v[i].set(self.__answer[i])
         self.__correct_answer=self.__answer[4]
     
-    def fun(self,y,n);
+    def fun(self,y,n):
         if y==self.__correct_answer:
             self.correct+=1
             n.config(activebackground="green")
@@ -100,5 +100,7 @@ b[3].grid(row=3,column=1,sticky=S)
 B=Button(scr,text="Start",font=("consolas",20),width=40,height=1,bg="black",fg="white",command=obj.set_)
 B.grid(row=10,column=0,columnspan=2,sticky="news")
 #B.geometry('{0}x{1}+0+0'.format(scr.winfo_screenwidth(),200))
+
+scr.mainloop()
 
 
